@@ -35,17 +35,17 @@ namespace APMCIngate
                 lblHeader.Text = "Entry Pass Loaded Vehicle";
             }
             refreshdata();
-            hide();
+            Reset();
         }
 
         public void Clear()
         {
             txtVehicleNo.Text = "";
             txtPlace.Text = "";
-            refreshdata();
+           // refreshdata();
         }
 
-        public void hide()
+        public void Reset()
         {
             lblTrNoOkay.Visible = false;
             txtTrNoOkay.Visible = false;
@@ -170,6 +170,7 @@ namespace APMCIngate
                             cmbType.Visible = true;
                             cmbType.Enabled = true;
                             cmbType.Focus();
+                            cmbType.DroppedDown = true;
                             //lblPlace.Visible = true;
                             //txtPlace.Visible = true;
                             //lblPlaceMsg.Visible = true;
@@ -180,7 +181,7 @@ namespace APMCIngate
                     }
                     else if ((txtTrNoOkay.Text).ToString().Trim() == "N" || (txtTrNoOkay.Text).ToString().Trim() == "n")
                     {
-                        hide();
+                        Reset();
                         txtVehicleNo.Text = "";
                         txtVehicleNo.Focus();
                     }
@@ -192,7 +193,7 @@ namespace APMCIngate
                     }
                     else
                     {
-                        hide();
+                        Reset();
                         txtVehicleNo.Text = "";
                         txtVehicleNo.Focus();
                     }
@@ -294,7 +295,7 @@ namespace APMCIngate
                     }
                     else
                     {
-                        hide();
+                        Reset();
                         lblPlace.Visible = false;
                         lblPlace.Visible = false;
                         txtPlace.Visible = false;
@@ -311,8 +312,8 @@ namespace APMCIngate
                 }
                 else
                 {
-                 //   refreshdata();
-                    hide();
+                    //   refreshdata();
+                    Reset();
 
                 }
                 e.Handled = true;
@@ -327,7 +328,7 @@ namespace APMCIngate
                     if (txtAnotherTruck.Text.ToString().Trim() == "Y" || txtAnotherTruck.Text.ToString().Trim() == "y")
                     {
                         //refreshdata();
-                        hide();
+                        Reset();
                         Clear();
                     }
                     else if (txtAnotherTruck.Text.ToString().Trim() == "N" || txtAnotherTruck.Text.ToString().Trim() == "n")
